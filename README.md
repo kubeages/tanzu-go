@@ -1,13 +1,13 @@
-# Go Sample App using Mod
+# Go Sample App using Tanzu Application Platform
 
-## Building
+## Creating the workload
 
-`pack build mod-sample --buildpack paketo-buildpacks/go`
+`tanzu apps workload create -f config/workload.yaml -y`
 
-## Running
+## Checking the workload
 
-`docker run --interactive --tty --env PORT=8080 --publish 8080:8080 mod-sample`
+`tanzu apps workload get tanzu-go`
 
 ## Viewing
 
-`curl http://localhost:8080`
+`curl https://tanzu-go.<YOUR_DOMAIN>`
